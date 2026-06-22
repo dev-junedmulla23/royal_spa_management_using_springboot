@@ -1,0 +1,64 @@
+server.port=8086
+server.address=0.0.0.0
+
+# App config
+app.base-url=http://localhost:8086
+
+# Database Configuration
+spring.datasource.url=jdbc:postgresql://localhost:5432/royal_spa_interns
+spring.datasource.username=postgres
+spring.datasource.password=newpassword
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+# ??? Firebase Config ????????????????????????????????????????
+firebase.config.path=firebase-service-account.json
+
+# ??? Scheduling Config ???????????????????????????????????????
+# Enable async scheduling (optional, for parallel job execution)
+spring.task.scheduling.pool.size=5
+
+# ??? Logging (helpful for debugging schedulers) ??????????????
+logging.level.com.example.crm=DEBUG
+
+
+# ??? Twilio WhatsApp Config ??????????????????????????????????
+twilio.account.sid=YOUR_TWILIO_ACCOUNT_SID
+twilio.auth.token=YOUR_TWILIO_AUTH_TOKEN
+twilio.whatsapp.number=+14155238886
+
+# ??? Async thread pool (for @Async WhatsApp sending) ????????
+spring.task.execution.pool.core-size=5 
+spring.task.execution.pool.max-size=10
+
+# JPA Configuration
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+
+
+
+# S3 bucket config
+aws.access.key=SSDTFYUISSDFGHKUGJ
+aws.secret.key=BnqwL7A5yGSjc1dejDFFGJHKJGHJH0eW7WbHWN
+aws.s3.region=ap-south-5
+aws.s3.bucket=dfghjlk;jhgjjlkhjlkhgjkkljhg
+app.upload.max-size-bytes=2097152
+
+
+# ===============================
+# Email Configuration
+# ===============================
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=abc@gmail.com
+spring.mail.password=ceveltvegpaxzzakz
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+
+
+
+
+
+spring.servlet.multipart.max-file-size=-1
+spring.servlet.multipart.max-request-size=-1

@@ -1,0 +1,29 @@
+services:
+  royal-spa-app:
+    build: .
+    container_name: royal_spa_container
+    ports:
+      - "8080:8080"
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/juned
+      SPRING_DATASOURCE_USERNAME: juned
+      SPRING_DATASOURCE_PASSWORD: 1234
+
+  postgres:
+    image: postgres:15
+    container_name: royal_spa_db
+    restart: always
+    environment:
+      POSTGRES_USER: juned
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: juned
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
